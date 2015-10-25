@@ -185,13 +185,20 @@ $endif$
 $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 $endif$
+
+$if(date)$
 \date{$date$\vspace{-0.5\baselineskip}}
+$endif$
+
+
+$if(version_number)$
+\date{$date$}
+\publishers{$version_number$} % \publishers setzt die Versionsnummer an das Ende der Seite
+$endif$
+
 $for(header-includes)$
 $header-includes$
 $endfor$
-$if(version_number)$
-\publishers{$version_number$} % \publishers setzt die Versionsnummer an das Ende der Seite
-$endif$
 
 
 $if(subparagraph)$
